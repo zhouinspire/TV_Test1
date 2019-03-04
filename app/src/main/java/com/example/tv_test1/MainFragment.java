@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+//将Mainfragment作为BrowseFragment的子类 BF为Android应用程序创建了标准UI
 public class MainFragment extends BrowseFragment {
     private static final String TAG = "MainFragment";
 
@@ -132,17 +133,21 @@ public class MainFragment extends BrowseFragment {
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(mMetrics);
     }
 
+    //设置实现这个应用程序的主要颜色和标题的UI
+
     private void setupUIElements() {
         // setBadgeDrawable(getActivity().getResources().getDrawable(
-        // R.drawable.videos_by_google_banner));
-        setTitle(getString(R.string.browse_title)); // Badge, when set, takes precedent
+        // R.drawable.videos_by_google_banner));//展示在标题栏上的图片
+        setTitle(getString(R.string.browse_title)); // Badge, when set, takes precedent 设置title
         // over title
+
+        //HEADERS_ENABLED 显示左侧导航栏，HEADERS_DISABLED 不显示 HEADERS_HIDDEN 隐藏，到边缘按左键还能显示
         setHeadersState(HEADERS_ENABLED);
         setHeadersTransitionOnBackEnabled(true);
 
-        // set fastLane (or headers) background color
+        // set fastLane (or headers) background color 设置快速导航背景色
         setBrandColor(ContextCompat.getColor(getActivity(), R.color.fastlane_background));
-        // set search icon color
+        // set search icon color 设置搜索颜色
         setSearchAffordanceColor(ContextCompat.getColor(getActivity(), R.color.search_opaque));
     }
 
